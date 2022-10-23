@@ -1,0 +1,13 @@
+function dotProduct(x: array[xlo..xhi: integer] of real,
+  y: array[ylo..yhi: integer] of real): real;
+var
+i: integer;
+sum: real;
+begin
+if (xhi - xlo <> yhi - ylo)
+error("dotProduct: arrays of different lengths");
+sum := 0.0;
+for i := xlo to xhi do
+sum := sum + x[i] * y[i - xlo + ylo];
+dotProduct := sum
+end;
